@@ -14,7 +14,7 @@ npm run [command]
   * creates a static file server
   * transpile files in `es6` folder on save
   * rebundle application on page load
-- `server`: run the static file server only _(kind of presentation mode)_
+- `serve`: run the static file server only _(kind of presentation mode)_
 
 
 ## Requirements
