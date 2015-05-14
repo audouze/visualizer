@@ -13,10 +13,10 @@
     "serve": "node ./bin/scripts.js --serve"
   },
   "dependencies": {
-    "babel-runtime": "4.7.6"
+    "babel-runtime": "^4.7.16"
   },
   "devDependencies": {
-    "babel": "^4.5.0",
+    "babel": "^5.3.3",
     "browserify": "^9.0.3",
     "connect": "^3.3.5",
     "fs-extra": "^0.16.3",
