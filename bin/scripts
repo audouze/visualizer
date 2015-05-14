@@ -43,7 +43,7 @@ var NC    = '\033[0m'; // No Color
 // COMMAND INTERPRETER
 // -----------------------------------------------
 var command = process.argv[2];
-// execute the correct function given the script
+
 switch (command) {
   case '--watch':
     watch();
@@ -54,9 +54,6 @@ switch (command) {
   case '--bundle':
     bundle();
     break;
-  case '--uglify':
-    uglify();
-    break;
   case '--transpile':
     transpileAll();
     break;
@@ -65,33 +62,30 @@ switch (command) {
 // HELPERS
 // -----------------------------------------------
 
-// create filename from src to dist
+// change filename from `src/` to `dist/`
 function createTargetName(filename) {
-  // replace sourceDir with targetDir
   return filename.replace(new RegExp('^' + srcDir), distDir);
 }
 
 // SCRIPTS
 // -----------------------------------------------
 
-// watch source dir and launch a server which bundles js when requested
 function watch() {
   nodeWatch(srcDir, function(filename) {
     transpile(filename);
   });
 
-  // create an http which browserify on 'bundle.js' request
+  // middleware to browserify on 'bundle.js' request
   serve(bundleMiddleWare);
 }
 
 function serve(middleware) {
-  if (!middleware) {
-    middleware = function(req, res, next) { next(); }
-  }
-
   var app = connect();
 
-  app.use(middleware);
+  if (middleware) {
+    app.use(middleware);
+  }
+
   app.use(serveFavicon('./assets/favicon.ico'));
   app.use(serveStatic('.', { index: ['index.html'] }));
 
@@ -116,21 +110,23 @@ function bundle(next) {
   var src = './' + pkg.main;
   var target = bundleFile;
   var bro = browserify(src, browserifyOptions);
-  var error = false; // prevent success message if an error occured
+  var error = null; // prevent success message if an error occured in browserify
 
   stream = fse.createWriteStream(target)
   bro.bundle()
     .on('error', function(err) {
-      error = true;
-      console.log(util.format(red + '=> ' + err.message + NC));
+      error = err;
       this.emit('end');
     })
     .pipe(stream);
 
   stream.on('finish', function() {
-    if (error) { return }
-    console.log(util.format(green + '=> %s: successfully created' + NC, target));
-    if (next) { next(); }
+    if (error !== null) {
+      console.log(util.format(red + '=> ' + error.message + NC));
+    } else {
+      console.log(util.format(green + '=> %s: successfully created' + NC, target));
+      if (next) { next(); }
+    }
   });
 }
 
