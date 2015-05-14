@@ -13,8 +13,8 @@
     "serve": "node ./bin/scripts.js --serve"
   },
   "dependencies": {
-    "waves-ui": "wavesjs/ui",
-    "babel-runtime": "^4.7.16"
+    "babel-runtime": "^5.3.3",
+    "waves-ui": "wavesjs/ui"
   },
   "devDependencies": {
     "connect": "^3.3.5",

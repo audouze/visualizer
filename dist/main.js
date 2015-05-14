@@ -1,21 +1,23 @@
 // es6 module syntax
-"use strict";
+'use strict';
 
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
+var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
 
-var _interopRequire = require("babel-runtime/helpers/interop-require")["default"];
+var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
 
-var ui = _interopRequire(require("waves-ui"));
+var _wavesUi = require('waves-ui');
 
-console.log(ui);
+var _wavesUi2 = _interopRequireDefault(_wavesUi);
+
+console.log(_wavesUi2['default']);
 
 // es6 class
 
 var Test = function Test() {
   _classCallCheck(this, Test);
 
-  console.log("this is an ES6 class", this);
+  console.log('this is an ES6 class', this);
 };
 
 new Test();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVzNi9tYWluLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7SUFDTyxFQUFFLDJCQUFNLFVBQVU7O0FBQ3pCLE9BQU8sQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLENBQUM7Ozs7SUFHVixJQUFJLEdBQ0csU0FEUCxJQUFJLEdBQ007d0JBRFYsSUFBSTs7QUFFTixTQUFPLENBQUMsR0FBRyxDQUFDLHNCQUFzQixFQUFFLElBQUksQ0FBQyxDQUFDO0NBQzNDOztBQUdILElBQUksSUFBSSxFQUFFLENBQUMiLCJmaWxlIjoiZXM2L21haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBlczYgbW9kdWxlIHN5bnRheFxuaW1wb3J0IHVpIGZyb20gJ3dhdmVzLXVpJztcbmNvbnNvbGUubG9nKHVpKTtcblxuLy8gZXM2IGNsYXNzXG5jbGFzcyBUZXN0IHtcbiAgY29uc3RydWN0b3IoKSB7XG4gICAgY29uc29sZS5sb2coJ3RoaXMgaXMgYW4gRVM2IGNsYXNzJywgdGhpcyk7XG4gIH1cbn1cblxubmV3IFRlc3QoKTtcblxuIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVzNi9tYWluLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7dUJBQ2UsVUFBVTs7OztBQUN6QixPQUFPLENBQUMsR0FBRyxzQkFBSSxDQUFDOzs7O0lBR1YsSUFBSSxHQUNHLFNBRFAsSUFBSSxHQUNNO3dCQURWLElBQUk7O0FBRU4sU0FBTyxDQUFDLEdBQUcsQ0FBQyxzQkFBc0IsRUFBRSxJQUFJLENBQUMsQ0FBQztDQUMzQzs7QUFHSCxJQUFJLElBQUksRUFBRSxDQUFDIiwiZmlsZSI6ImVzNi9tYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gZXM2IG1vZHVsZSBzeW50YXhcbmltcG9ydCB1aSBmcm9tICd3YXZlcy11aSc7XG5jb25zb2xlLmxvZyh1aSk7XG5cbi8vIGVzNiBjbGFzc1xuY2xhc3MgVGVzdCB7XG4gIGNvbnN0cnVjdG9yKCkge1xuICAgIGNvbnNvbGUubG9nKCd0aGlzIGlzIGFuIEVTNiBjbGFzcycsIHRoaXMpO1xuICB9XG59XG5cbm5ldyBUZXN0KCk7XG5cbiJdfQ==
