@@ -116,7 +116,7 @@ function bundle(next) {
   bro.bundle()
     .on('error', function(err) {
       error = true;
-      console.log(util.format(red + '=> ' + err.message));
+      console.log(util.format(red + '=> ' + err.message + NC));
       this.emit('end');
     })
     .pipe(stream);
@@ -147,10 +147,10 @@ function transpile(src) {
   var target = createTargetName(src);
 
   babel.transformFile(src, babelOptions, function(err, res) {
-    if (err) { return console.log(util.format(red + '=> ' + err.message)); }
+    if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
 
-    fse.outputFile(target, res, function(err, res) {
-      if (err) { return console.log(util.format(red + '=> ' + err.message)); }
+    fse.outputFile(target, res.code, function(err, res) {
+      if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
 
       console.log(util.format(green + '=> %s: successfully transpiled to "%s"' + NC, src, target));
     });
