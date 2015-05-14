@@ -9,7 +9,9 @@ npm run [command]
 ```
 
 - `transpile`: transpile all files from `es6` folder to `dist` folder
-- `bundle`: run `transpile` command and creates a browserified bundle _(entry point: `dist/main.js`)_
+- `bundle`:
+  * run `transpile` command
+  * creates a browserified bundle _(entry point: `dist/main.js`)_
 - `watch`:
   * creates a static file server
   * transpile files in `es6` folder on save
