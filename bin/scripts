@@ -2,7 +2,7 @@
 var pkg = require('../package.json');
 var childProcess = require('child_process');
 var util = require('util');
-// devDependencies
+// transpile stuff
 var babel = require('babel');
 var browserify = require('browserify');
 var fse = require('fs-extra');
@@ -11,6 +11,8 @@ var nodeWatch = require('node-watch');
 var connect = require('connect');
 var serveStatic = require('serve-static');
 var serveFavicon = require('serve-favicon');
+var portfinder = require('portfinder');
+portfinder.basePort = 3000;
 
 // CONFIG
 // -----------------------------------------------
@@ -93,8 +95,12 @@ function serve(middleware) {
   app.use(serveFavicon('./assets/favicon.ico'));
   app.use(serveStatic('.', { index: ['index.html'] }));
 
-  app.listen(serverPort, function() {
-    console.log(util.format(blue + 'server listen at http://127.0.0.1:%s' + NC, serverPort));
+  portfinder.getPort(function(err, port) {
+    if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
+
+    app.listen(port, function() {
+      console.log(util.format(blue + 'server listen at http://127.0.0.1:%s' + NC, port));
+    });
   });
 }
 
@@ -106,12 +112,11 @@ function bundleMiddleWare(req, res, next) {
   }
 }
 
-// create the `.umd.js` version
 function bundle(next) {
   var src = './' + pkg.main;
   var target = bundleFile;
   var bro = browserify(src, browserifyOptions);
-  var error = false;
+  var error = false; // prevent success message if an error occured
 
   stream = fse.createWriteStream(target)
   bro.bundle()
@@ -121,7 +126,7 @@ function bundle(next) {
       this.emit('end');
     })
     .pipe(stream);
-  // is not called at the right place - streams are async
+
   stream.on('finish', function() {
     if (error) { return }
     console.log(util.format(green + '=> %s: successfully created' + NC, target));
@@ -129,7 +134,6 @@ function bundle(next) {
   });
 }
 
-// transpile all files in `srcDir`
 function transpileAll() {
   var cmd = 'find '+ srcDir +' -type f';
 
@@ -143,7 +147,6 @@ function transpileAll() {
   });
 }
 
-// transpile one file
 function transpile(src) {
   var target = createTargetName(src);
 
