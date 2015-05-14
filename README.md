@@ -12,6 +12,11 @@ ES6 Prototyping Boilerplate
   * rebundle application on page load
 - `server`: run the static file server only _(kind of presentation mode)_
 
+```
+# use:
+npm run [command]
+```
+
 ## Requirements
 
 The boilerplate uses `babel` and `browserify` in order to transpile from es6/CommonJS syntax to browser compliant es5.
@@ -21,7 +26,7 @@ Documentation for these modules can be found here:
 - [https://babeljs.io/](https://babeljs.io/)
 - [http://browserify.org/](http://browserify.org/)
 
-You may take a look at:
+You may also take a look at:
 - [https://babeljs.io/docs/usage/runtime/](https://babeljs.io/docs/usage/runtime/)
 
 ## Install / Update
