@@ -12,10 +12,11 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 var serveFavicon = require('serve-favicon');
 var portfinder = require('portfinder');
-portfinder.basePort = 3000;
+
 
 // CONFIG
 // -----------------------------------------------
+portfinder.basePort = 3000;
 var srcDir = 'es6';
 var distDir = 'dist';
 var serverPort = 3000;
