@@ -6,11 +6,11 @@
   "author": "Benjamin Matuszewski",
   "license": "ISC",
   "scripts": {
-    "transpile": "node ./bin/scripts.js --transpile",
+    "transpile": "./bin/scripts --transpile",
     "prebundle": "npm run transpile",
-    "bundle": "node ./bin/scripts.js --bundle",
-    "watch": "node ./bin/scripts.js --watch",
-    "serve": "node ./bin/scripts.js --serve"
+    "bundle": "./bin/scripts --bundle",
+    "watch": "./bin/scripts --watch",
+    "serve": "./bin/scripts --serve"
   },
   "dependencies": {
     "babel-runtime": "^5.3.3",
