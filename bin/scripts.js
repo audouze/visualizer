@@ -110,17 +110,27 @@ function bundle(next) {
   var src = './' + pkg.main;
   var target = bundleFile;
   var b = browserify(src, browserifyOptions);
+  var error = false;
 
   try {
     stream = fse.createWriteStream(target)
-    b.bundle().pipe(stream);
+    b
+      .bundle()
+      .on('error', function(err) {
+        error = true;
+        console.log(util.format(red + '=> ' + err.message));
+        this.emit('end');
+      })
+      .pipe(stream);
     // is not called at the right place - streams are async
     stream.on('finish', function() {
+      if (error) { return }
       console.log(util.format(green + '=> "%s" successfully created' + NC, target));
       if (next) { next(); }
     })
   } catch(e) {
-    return console.log(err.message);
+    // return console.log(err.message);
+    return console.log('blah blah');
   }
 
 }
