@@ -48,7 +48,7 @@ sudo npm install -g babel
 If problems with running global `babel` and `browserify` look at this issue:
 [http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module](http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module)
 
-(add `export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH` in your `.bash_profile`)
+(add something like `export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH` in your `.bash_profile`)
 
 
 ## TODOS
