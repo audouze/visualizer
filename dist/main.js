@@ -1,0 +1,15 @@
+"use strict";
+
+var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
+
+var ui = require("waves-ui");
+console.log(ui);
+
+var Test = function Test() {
+  _classCallCheck(this, Test);
+
+  console.log("this is an ES6 class", this);
+};
+
+new Test();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVzNi9tYWluLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxJQUFJLEVBQUUsR0FBRyxPQUFPLENBQUMsVUFBVSxDQUFDLENBQUM7QUFDN0IsT0FBTyxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsQ0FBQzs7SUFFVixJQUFJLEdBQ0csU0FEUCxJQUFJLEdBQ007d0JBRFYsSUFBSTs7QUFFTixTQUFPLENBQUMsR0FBRyxDQUFDLHNCQUFzQixFQUFFLElBQUksQ0FBQyxDQUFDO0NBQzNDOztBQUdILElBQUksSUFBSSxFQUFFLENBQUMiLCJmaWxlIjoiZXM2L21haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgdWkgPSByZXF1aXJlKCd3YXZlcy11aScpO1xuY29uc29sZS5sb2codWkpO1xuXG5jbGFzcyBUZXN0IHtcbiAgY29uc3RydWN0b3IoKSB7XG4gICAgY29uc29sZS5sb2coJ3RoaXMgaXMgYW4gRVM2IGNsYXNzJywgdGhpcyk7XG4gIH1cbn1cblxubmV3IFRlc3QoKTtcblxuIl19
