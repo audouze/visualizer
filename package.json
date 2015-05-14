@@ -1,5 +1,5 @@
 {
-  "name": "es-prototyping-boilerplate",
+  "name": "es6-prototyping-boilerplate",
   "version": "1.0.0",
   "description": "boilerplate for rapid es6 prototyping",
   "main": "dist/main.js",
@@ -13,11 +13,10 @@
     "serve": "node ./bin/scripts.js --serve"
   },
   "dependencies": {
+    "waves-ui": "wavesjs/ui",
     "babel-runtime": "^4.7.16"
   },
   "devDependencies": {
-    "babel": "^5.3.3",
-    "browserify": "^9.0.3",
     "connect": "^3.3.5",
     "fs-extra": "^0.16.3",
     "node-watch": "^0.3.4",
