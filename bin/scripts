@@ -33,7 +33,7 @@ var browserifyOptions = {
   debug: true
 };
 
-// colors for shell - for a more complete list
+// colors for terminal logs
 // cf. http://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 var red   = '\033[0;31m';
 var green = '\033[0;32m';
@@ -90,7 +90,7 @@ function serve(middleware) {
   app.use(serveStatic('.', { index: ['index.html'] }));
 
   portfinder.getPort(function(err, port) {
-    if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
+    if (err) { return console.log(util.format(red + '=> %s' + NC, err.message)); }
 
     app.listen(port, function() {
       console.log(util.format(blue + 'server listen at http://127.0.0.1:%s' + NC, port));
@@ -122,7 +122,7 @@ function bundle(next) {
 
   stream.on('finish', function() {
     if (error !== null) {
-      console.log(util.format(red + '=> ' + error.message + NC));
+      console.log(util.format(red + '=> %s' + NC, error.message));
     } else {
       console.log(util.format(green + '=> %s: successfully created' + NC, target));
       if (next) { next(); }
@@ -147,12 +147,12 @@ function transpile(src) {
   var target = createTargetName(src);
 
   babel.transformFile(src, babelOptions, function(err, res) {
-    if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
+    if (err) { return console.log(util.format(red + '=> %s' + NC, err.message)); }
 
     fse.outputFile(target, res.code, function(err, res) {
-      if (err) { return console.log(util.format(red + '=> ' + err.message + NC)); }
+      if (err) { return console.log(util.format(red + '=> %s' + NC, err.message)); }
 
-      console.log(util.format(green + '=> %s: successfully transpiled to "%s"' + NC, src, target));
+      console.log(util.format(green + '=> %s: successfully transpiled to %s' + NC, src, target));
     });
   });
 }
