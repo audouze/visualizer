@@ -109,30 +109,23 @@ function bundleMiddleWare(req, res, next) {
 function bundle(next) {
   var src = './' + pkg.main;
   var target = bundleFile;
-  var b = browserify(src, browserifyOptions);
+  var bro = browserify(src, browserifyOptions);
   var error = false;
 
-  try {
-    stream = fse.createWriteStream(target)
-    b
-      .bundle()
-      .on('error', function(err) {
-        error = true;
-        console.log(util.format(red + '=> ' + err.message));
-        this.emit('end');
-      })
-      .pipe(stream);
-    // is not called at the right place - streams are async
-    stream.on('finish', function() {
-      if (error) { return }
-      console.log(util.format(green + '=> "%s" successfully created' + NC, target));
-      if (next) { next(); }
+  stream = fse.createWriteStream(target)
+  bro.bundle()
+    .on('error', function(err) {
+      error = true;
+      console.log(util.format(red + '=> ' + err.message));
+      this.emit('end');
     })
-  } catch(e) {
-    // return console.log(err.message);
-    return console.log('blah blah');
-  }
-
+    .pipe(stream);
+  // is not called at the right place - streams are async
+  stream.on('finish', function() {
+    if (error) { return }
+    console.log(util.format(green + '=> %s: successfully created' + NC, target));
+    if (next) { next(); }
+  });
 }
 
 // transpile all files in `srcDir`
@@ -154,12 +147,12 @@ function transpile(src) {
   var target = createTargetName(src);
 
   babel.transformFile(src, babelOptions, function(err, res) {
-    if (err) { return console.log(err.message); }
+    if (err) { return console.log(util.format(red + '=> ' + err.message)); }
 
-    fse.outputFile(target, res.code, function(err, res) {
-      if (err) { return console.log(err.message); }
+    fse.outputFile(target, res, function(err, res) {
+      if (err) { return console.log(util.format(red + '=> ' + err.message)); }
 
-      console.log(util.format(green + '=> "%s" successfully transpiled to "%s"' + NC, src, target));
+      console.log(util.format(green + '=> %s: successfully transpiled to "%s"' + NC, src, target));
     });
   });
 }
