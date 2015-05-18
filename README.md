@@ -23,7 +23,12 @@ npm run [command]
 
 The boilerplate uses `babel` and `browserify` in order to transpile from es6 / CommonJS syntax to browser compliant es5.
 
-**These packages should be installed globally**
+**These packages should be installed globally and linked into your project**
+
+```
+sudo npm link babel
+sudo npm link browserify
+```
 
 Documentation for these modules can be found here:
 - [https://babeljs.io/](https://babeljs.io/)
@@ -31,6 +36,7 @@ Documentation for these modules can be found here:
 
 You may also take a look at:
 - [https://babeljs.io/docs/usage/runtime/](https://babeljs.io/docs/usage/runtime/)
+- [https://www.npmjs.com/package/npm-workspace](https://www.npmjs.com/package/npm-workspace)
 
 ## System Install / Update
 
@@ -44,12 +50,6 @@ sudo npm install -g npm-workspace
 sudo npm install -g browserify
 sudo npm install -g babel
 ```
-
-If problems with running global `babel` and `browserify` look at this issue:
-[http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module](http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module)
-
-(add something like `export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH` in your `.bash_profile`)
-
 
 ## TODOS
 
