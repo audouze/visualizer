@@ -1,7 +1,5 @@
 // es6 module syntax
-import ui from 'waves-ui';
-// import test from 'crash';
-console.log(ui);
+// import ui from 'waves-ui';
 
 // es6 class
 class Test {
