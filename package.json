@@ -14,7 +14,7 @@
     "postinstall": "npm run bundle"
   },
   "dependencies": {
-    "babel-runtime": "^5.8.34"
+    "babel-runtime": "^6.6.1"
   },
   "devDependencies": {
     "babel-core": "^6.6.5",
