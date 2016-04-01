@@ -9,19 +9,19 @@ ES6 Prototyping Boilerplate
 npm run [command]
 ```
 
-- `transpile`: transpile all files from `es6` folder to `dist` folder
-- `bundle`:
+- `transpile`
+  * transpile all files from `src` folder to `dist` folder
+- `bundle`
   * run `transpile` command
-  * creates a browserified bundle _(entry point: `dist/main.js`)_
-- `watch`:
-  * creates a static file server
-  * transpile files in `es6` folder on save
+  * create the browserified bundle
+- `watch`
+  * create a static file server
+  * transpile files in `src` folder when changed
   * rebundle application on page load
-- `serve`: run the static file server only _(kind of presentation mode)_
+- `serve` 
+  * run the static file server only _(presentation mode)_
 
 ## Usage
-
-Clone the repository and remove the `git` history
 
 ```sh
 git clone --depth=1 https://github.com/Ircam-RnD/es6-prototyping-boilerplate.git dest_directory
