@@ -1,6 +1,6 @@
 {
   "name": "es6-prototyping-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "boilerplate for rapid es6 prototyping",
   "main": "dist/main.js",
   "author": "Benjamin Matuszewski",
