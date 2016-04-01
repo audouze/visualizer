@@ -26,12 +26,9 @@ Clone the repository and remove the `git` history
 ```sh
 git clone --depth=1 https://github.com/Ircam-RnD/es6-prototyping-boilerplate.git dest_directory
 cd dest_directory
-rm -rf !$/.git
+rm -rf !$/.git  # remove git history
 npm install
 ```
 
-- [http://stackoverflow.com/questions/11497457/git-clone-without-git-directory](http://stackoverflow.com/questions/11497457/git-clone-without-git-directory)
-
-The boilerplate uses [https://babeljs.io/](https://babeljs.io/) and [http://browserify.org/](http://browserify.org/) in order to transpile from es6 
-syntax to browser compliant es5.
+This boilerplate uses [https://babeljs.io/](https://babeljs.io/) and [http://browserify.org/](http://browserify.org/).
 
