@@ -7,11 +7,9 @@ body {
   margin: 0;
 }
 
-/* example */
-
 h1 {
   font-size: 2rem;
   margin: 0;
   padding: 10px;
-  color: steelblue;
+  color: rgba(0, 0, 0, 0.9);
 }

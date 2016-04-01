@@ -1,6 +1,8 @@
 ES6 Prototyping Boilerplate
 =======================================================
 
+> A client-side es6 boilerplate for rapid prototyping
+
 ## Available Commands
 
 ```
@@ -17,48 +19,19 @@ npm run [command]
   * rebundle application on page load
 - `serve`: run the static file server only _(kind of presentation mode)_
 
-## Use / Requirements
+## Usage
 
 Clone the repository and remove the `git` history
 
 ```sh
-git clone --depth=1 https://github.com/Ircam-RnD/es6-prototyping-boilerplate.git destination_folder
+git clone --depth=1 https://github.com/Ircam-RnD/es6-prototyping-boilerplate.git dest_directory
+cd dest_directory
 rm -rf !$/.git
 npm install
 ```
 
 - [http://stackoverflow.com/questions/11497457/git-clone-without-git-directory](http://stackoverflow.com/questions/11497457/git-clone-without-git-directory)
 
-The boilerplate uses `babel` and `browserify` in order to transpile from es6 / CommonJS syntax to browser compliant es5.
+The boilerplate uses [https://babeljs.io/](https://babeljs.io/) and [http://browserify.org/](http://browserify.org/) in order to transpile from es6 
+syntax to browser compliant es5.
 
-**These packages should be installed globally and linked into your project**
-
-```sh
-sudo npm link babel
-sudo npm link browserify
-# and...
-npm run watch
-```
-
-For more information, see:
-- [https://babeljs.io/](https://babeljs.io/)
-- [http://browserify.org/](http://browserify.org/)
-
-## System Install / Update
-
-install node from [https://nodejs.org/download/](https://nodejs.org/download/)
-
-```sh
-sudo npm install -g n
-n stable
-sudo npm install -g npm-workspace
-sudo npm install -g browserify
-sudo npm install -g babel
-```
-
-- [https://babeljs.io/docs/usage/runtime/](https://babeljs.io/docs/usage/runtime/)
-- [https://www.npmjs.com/package/npm-workspace](https://www.npmjs.com/package/npm-workspace)
-
-## TODOS
-
-- install `sass` ?
