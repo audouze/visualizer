@@ -26,7 +26,7 @@ npm run [command]
 ```sh
 git clone --depth=1 https://github.com/Ircam-RnD/es6-prototyping-boilerplate.git dest_directory
 cd dest_directory
-rm -rf !$/.git  # remove git history
+rm -rf .git  # remove git history
 npm install
 ```
 
