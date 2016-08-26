@@ -1,7 +1,7 @@
 ES6 Prototyping Boilerplate
 =======================================================
 
-> A client-side es6 boilerplate for rapid prototyping
+> A client-side boilerplate for rapid prototyping with latest es features (using [babel-latest preset](https://babeljs.io/docs/plugins/preset-latest/))
 
 ## Available Commands
 
@@ -18,7 +18,7 @@ npm run [command]
   * create a static file server
   * transpile files in `src` folder when changed
   * rebundle application on page load
-- `serve` 
+- `serve`
   * run the static file server only _(presentation mode)_
 
 ## Usage

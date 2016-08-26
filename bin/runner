@@ -14,11 +14,8 @@ var cwd = process.cwd();
 /**
  * Options for babel transpiling.
  */
-var babelOptions = {
-  sourceMap: 'inline',
-  presets: ['es2015'],
-  plugins: ['transform-runtime', 'transform-es2015-modules-commonjs'],
-};
+var babelrc = fse.readFileSync(path.join(cwd, '.babelrc'));
+var babelOptions = JSON.parse(babelrc.toString());
 
 /**
  * Options for watch.
