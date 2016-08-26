@@ -1,7 +1,7 @@
 ES6 Prototyping Boilerplate
 =======================================================
 
-> A client-side boilerplate for rapid prototyping with latest es features (using [babel-latest preset](https://babeljs.io/docs/plugins/preset-latest/))
+> A client-side boilerplate for rapid prototyping with latest EcmaScript features (using [babel-latest](https://babeljs.io/docs/plugins/preset-latest/) preset)
 
 ## Available Commands
 
