@@ -1,9 +1,18 @@
 
 class MyClass {
   constructor() {
-    console.log('Hello es6');
     console.log(this);
+  }
+
+  * generatorMethod() {
+    let i = 0;
+
+    while (i < 10)
+      yield i++;
+
+    return 'done';
   }
 }
 
-new MyClass();
+const myClass = new MyClass();
+console.log([...myClass.generatorMethod()]);
