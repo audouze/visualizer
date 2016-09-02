@@ -8,6 +8,7 @@
   "scripts": {
     "bundle": "./bin/runner --bundle",
     "transpile": "./bin/runner --transpile",
+    "prewatch": "npm run transpile",
     "watch": "./bin/runner --watch",
     "serve": "./bin/runner --serve",
 
