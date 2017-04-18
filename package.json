@@ -11,11 +11,11 @@
     "prewatch": "npm run transpile",
     "watch": "./bin/runner --watch",
     "serve": "./bin/runner --serve",
-
     "postinstall": "npm run bundle"
   },
   "dependencies": {
-    "babel-runtime": "^6.9.2"
+    "babel-runtime": "^6.9.2",
+    "waves-lfo": "github:wavesjs/waves-lfo"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
